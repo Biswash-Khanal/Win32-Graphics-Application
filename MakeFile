@@ -1,0 +1,21 @@
+# Compiler and flags
+CXX = g++
+CXXFLAGS = -Wall -O2
+
+# Source and output
+SRC = graphics_tool.cpp
+OUT = graphics_tool.exe
+
+# WinAPI linker flags
+LDFLAGS = -lgdi32
+
+# Default target
+all: $(OUT)
+
+# Build rule
+$(OUT): $(SRC)
+	$(CXX) $(CXXFLAGS) -o $(OUT) $(SRC) $(LDFLAGS)
+
+# Clean rule
+clean:
+	del /Q $(OUT)
